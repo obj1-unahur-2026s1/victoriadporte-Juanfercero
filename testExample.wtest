@@ -11,3 +11,21 @@ describe "group of tests for pepita" {
 }
 
 */
+
+import example.*
+
+describe "grupo de test" {
+  test "Victoria se quiere parecer a Pareto (que mide 150 cms), se hace pequeña, practica judo y por lo tanto necesita un traje de judo. Además, tiene 4 entrenadores." {
+    dePorte.altura(150)
+    dePorte.disciplina(judo)
+    dePorte.sumarCantEntrenadores(3)
+    assert.equals(7900, dePorte.presupestoPropio())
+  }
+
+  test "Victoria ahora se quiere parecer a Delpo y empieza a practicar tenis. Elonga con intensidad hasta llegar a los dos metros diez, necesita una raqueta y tiene dos entrenadores." {
+    dePorte.altura(210)
+    dePorte.disciplina(tenis)
+    dePorte.sumarCantEntrenadores(1)
+    assert.equals(3200, dePorte.presupestoPropio())
+  }
+}

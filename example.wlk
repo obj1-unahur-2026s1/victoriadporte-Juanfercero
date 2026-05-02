@@ -1,6 +1,6 @@
 object dePorte {
   var edad = 30
-  const altura = 180
+  var altura = 180
   var disciplina = tenis
   var cantEntrenadores = 1
   const pagoEntrenadores = 100
@@ -9,16 +9,27 @@ object dePorte {
   method edad(valor) {
     edad = valor 
   }
+  method altura(valor) {
+    altura = valor
+  }
   method disciplina(nuevaDisciplina) {
     disciplina = nuevaDisciplina
+    elemento = disciplina.elemento() //HAY QUE ACTUALIZARLO
   }
-  method sumarEntrenador() {
-    cantEntrenadores += 1    
+  method sumarCantEntrenadores(valor) {
+    cantEntrenadores += valor    
+  }
+  method restarCantEntrenadores(valor) {
+    cantEntrenadores -= valor
   }
 
 
-  method presupesto() {
-    cantEntrenadores * pagoEntrenadores + elemento.costo(edad, altura)
+  method presupestoPropio() {
+    return cantEntrenadores * pagoEntrenadores + elemento.costo(edad, altura)
+  }
+
+  method presupuestoTotal() {
+    return self.presupestoPropio() + disciplina.precio()
   }
 }
 
