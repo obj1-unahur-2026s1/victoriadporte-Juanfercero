@@ -4,7 +4,7 @@ object dePorte {
   var disciplina = tenis
   var cantEntrenadores = 1
   const pagoEntrenadores = 100
-  var elemento = disciplina.elemento()
+  var elemento = disciplina.elemento() //De esta forma no permitimos que una persona que hace judo lleve raqueta de tenis.
 
   method edad(valor) {
     edad = valor 
@@ -61,6 +61,15 @@ object judo {
   }
 }
 
+object hockey {
+  method precio() {
+    return 1500
+  }
+  method elemento() {
+    return paloHockey
+  }
+}
+
 
 object raqueta {
   method costo(edad, altura) {
@@ -71,5 +80,11 @@ object raqueta {
 object trajeDeJudo {
   method costo(edad, altura) {
     return altura * 50
+  }
+}
+
+object paloHockey {
+  method costo() {
+    return 150
   }
 }
